@@ -3,10 +3,13 @@ const Schema  = mongoose.Schema
 
 const userSchema = new Schema({
     name:{
-        type : String
+        type : String,
+        required:true
     },
     number:{
         type: Number,
+        required:true,
+        unique:true,
         minLength:10
     },
     otp:{
@@ -16,6 +19,10 @@ const userSchema = new Schema({
     inlineRadioOptions:{
         type: String,
         require: true
+    },
+    isAdmin:{
+        type: String,
+        require: false
     }
 },
     {timestamps:true},
